@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Preeti Bathula | Cloud & AI/ML Developer</title>
+
+<meta name="description"
+content="Portfolio of Preeti Bathula — Computer Science student, Google Student Ambassador, Cloud & AI/ML Developer.">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root{
+    --bg:#07080d;
+    --bg2:#0d1018;
+    --card:rgba(255,255,255,0.055);
+    --card-hover:rgba(255,255,255,0.09);
+    --text:#f5f7fb;
+    --muted:#9da5b5;
+    --line:rgba(255,255,255,0.1);
+
+    --primary:#8b7cff;
+    --secondary:#35d6c8;
+    --accent:#ffb86b;
+
+    --shadow:0 30px 80px rgba(0,0,0,.4);
+}
+
+.light{
+    --bg:#f5f7fb;
+    --bg2:#ffffff;
+    --card:rgba(0,0,0,.045);
+    --card-hover:rgba(0,0,0,.08);
+    --text:#10131a;
+    --muted:#5f6674;
+    --line:rgba(0,0,0,.1);
+
+    --primary:#5e50e8;
+    --secondary:#008f83;
+    --accent:#d87800;
+
+    --shadow:0 30px 80px rgba(30,40,60,.15);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter, sans-serif;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(139,124,255,.12), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(53,214,200,.09), transparent 25%),
+        var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    transition:.4s;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+section{
+    padding:110px 0;
+    position:relative;
+}
+
+.section-title{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(35px,5vw,62px);
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.section-subtitle{
+    color:var(--muted);
+    max-width:700px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
+    overflow:hidden;
+}
+
+.orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(70px);
+    opacity:.35;
+    animation:float 10s infinite alternate ease-in-out;
+}
+
+.orb.one{
+    width:350px;
+    height:350px;
+    background:var(--primary);
+    left:-120px;
+    top:20%;
+}
+
+.orb.two{
+    width:300px;
+    height:300px;
+    background:var(--secondary);
+    right:-100px;
+    top:55%;
+    animation-delay:2s;
+}
+
+.grid{
+    position:absolute;
+    inset:0;
+    opacity:.08;
+    background-image:
+        linear-gradient(var(--text) 1px, transparent 1px),
+        linear-gradient(90deg,var(--text) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+@keyframes float{
+    from{transform:translateY(-30px) translateX(-20px)}
+    to{transform:translateY(50px) translateX(30px)}
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(1100px,92%);
+    padding:14px 20px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:rgba(10,12,18,.65);
+    backdrop-filter:blur(20px);
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.light nav{
+    background:rgba(255,255,255,.7);
+}
+
+.logo{
+    font-family:"Space Grotesk";
+    font-weight:700;
+    font-size:21px;
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    font-size:13px;
+    color:var(--muted);
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--text);
+}
+
+.theme{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--card);
+    color:var(--text);
+    cursor:pointer;
+}
+
+.menu{
+    display:none;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:140px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:9px 15px;
+    border:1px solid var(--line);
+    border-radius:100px;
+    background:var(--card);
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:25px;
+}
+
+.dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#45e39b;
+    box-shadow:0 0 15px #45e39b;
+}
+
+.hero h1{
+    font-family:"Space Grotesk";
+    font-size:clamp(50px,8vw,100px);
+    line-height:.9;
+    letter-spacing:-5px;
+}
+
+.gradient{
+    background:linear-gradient(110deg,var(--text),var(--primary),var(--secondary));
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero h2{
+    font-size:clamp(18px,2vw,25px);
+    margin:28px 0 15px;
+    color:var(--muted);
+    font-weight:500;
+}
+
+.hero p{
+    max-width:650px;
+    color:var(--muted);
+    line-height:1.8;
+    font-size:16px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 20px;
+    border-radius:12px;
+    border:1px solid var(--line);
+    background:var(--card);
+    transition:.3s;
+    font-size:13px;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    background:var(--card-hover);
+}
+
+.btn.primary{
+    background:var(--text);
+    color:var(--bg);
+}
+
+/* =========================================================
+   PROFILE 3D OBJECT
+========================================================= */
+
+.profile-wrap{
+    display:flex;
+    justify-content:center;
+    perspective:1000px;
+}
+
+.profile-card{
+    width:320px;
+    height:410px;
+    border-radius:35px;
+    position:relative;
+    transform-style:preserve-3d;
+    transform:rotateY(-10deg) rotateX(5deg);
+    transition:.2s;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.025));
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.profile-card::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:var(--primary);
+    filter:blur(80px);
+    opacity:.35;
+    top:-70px;
+    right:-60px;
+}
+
+.profile-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:relative;
+    z-index:2;
+    mix-blend-mode:normal;
+}
+
+.profile-label{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    right:20px;
+    padding:15px;
+    border:1px solid var(--line);
+    border-radius:15px;
+    background:rgba(5,5,8,.65);
+    backdrop-filter:blur(15px);
+    z-index:4;
+}
+
+.profile-label strong{
+    display:block;
+}
+
+.profile-label small{
+    color:#aeb4c1;
+}
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+    padding:20px 0;
+}
+
+.marquee-track{
+    display:flex;
+    width:max-content;
+    animation:marquee 25s linear infinite;
+    gap:50px;
+}
+
+.marquee span{
+    color:var(--muted);
+    font-size:14px;
+    white-space:nowrap;
+}
+
+@keyframes marquee{
+    to{transform:translateX(-50%)}
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:70px;
+}
+
+.about-text{
+    color:var(--muted);
+    line-height:1.9;
+    font-size:16px;
+}
+
+.about-text p{
+    margin-bottom:20px;
+}
+
+.info-card{
+    padding:28px;
+    border:1px solid var(--line);
+    border-radius:22px;
+    background:var(--card);
+    margin-bottom:15px;
+    transition:.4s;
+}
+
+.info-card:hover{
+    transform:translateY(-5px);
+    background:var(--card-hover);
+}
+
+.info-card h3{
+    margin-bottom:8px;
+}
+
+.info-card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:35px;
+}
+
+.skill{
+    padding:12px 17px;
+    border:1px solid var(--line);
+    background:var(--card);
+    border-radius:12px;
+    color:var(--muted);
+    transition:.3s;
+}
+
+.skill:hover{
+    color:var(--text);
+    border-color:var(--primary);
+    transform:translateY(-4px);
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects{
+    margin-top:50px;
+    display:grid;
+    gap:30px;
+}
+
+.project{
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:35px;
+    background:var(--card);
+    position:relative;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow);
+}
+
+.project::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:var(--primary);
+    filter:blur(100px);
+    opacity:.08;
+    right:-100px;
+    top:-100px;
+}
+
+.project-number{
+    color:var(--secondary);
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:18px;
+}
+
+.project h3{
+    font-family:"Space Grotesk";
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.project-role{
+    color:var(--accent);
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.project p{
+    color:var(--muted);
+    line-height:1.8;
+    max-width:850px;
+}
+
+.project-section{
+    margin-top:28px;
+}
+
+.project-section h4{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:12px;
+}
+
+.feature-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.feature{
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:9px 12px;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.tech{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.project-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:28px;
+}
+
+/* =========================================================
+   EXPERIENCE TIMELINE
+========================================================= */
+
+.timeline{
+    margin-top:50px;
+    position:relative;
+    padding-left:35px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:5px;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:var(--line);
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:55px;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-34px;
+    top:5px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--secondary);
+    box-shadow:0 0 20px var(--secondary);
+}
+
+.timeline-date{
+    color:var(--secondary);
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+.timeline h3{
+    font-family:"Space Grotesk";
+    font-size:26px;
+    margin-bottom:4px;
+}
+
+.timeline h4{
+    color:var(--muted);
+    font-weight:500;
+    margin-bottom:15px;
+}
+
+.timeline p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:45px;
+}
+
+.cert{
+    padding:25px;
+    border:1px solid var(--line);
+    background:var(--card);
+    border-radius:20px;
+    transition:.35s;
+}
+
+.cert:hover{
+    transform:translateY(-6px);
+}
+
+.cert-number{
+    color:var(--secondary);
+    font-size:12px;
+}
+
+.cert h3{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.cert p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+}
+
+.cert a{
+    display:inline-block;
+    margin-top:15px;
+    font-size:12px;
+    color:var(--secondary);
+}
+
+/* =========================================================
+   AI LAB
+========================================================= */
+
+.ai-lab{
+    margin-top:50px;
+    padding:50px;
+    border-radius:30px;
+    border:1px solid var(--line);
+    background:
+        radial-gradient(circle at 80% 20%,rgba(139,124,255,.2),transparent 30%),
+        var(--card);
+    position:relative;
+    overflow:hidden;
+}
+
+.ai-orbit{
+    width:170px;
+    height:170px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    margin:0 auto 35px;
+    position:relative;
+    animation:spin 15s linear infinite;
+}
+
+.ai-orbit::before,
+.ai-orbit::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+}
+
+.ai-orbit::before{
+    width:20px;
+    height:20px;
+    background:var(--secondary);
+    box-shadow:0 0 30px var(--secondary);
+    top:-10px;
+    left:75px;
+}
+
+.ai-orbit::after{
+    width:13px;
+    height:13px;
+    background:var(--primary);
+    box-shadow:0 0 25px var(--primary);
+    bottom:15px;
+    right:5px;
+}
+
+.ai-lab-content{
+    text-align:center;
+    max-width:700px;
+    margin:auto;
+}
+
+.ai-lab h3{
+    font-family:"Space Grotesk";
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.ai-lab p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievement-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:45px;
+}
+
+.achievement{
+    padding:25px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:var(--card);
+}
+
+.achievement h3{
+    margin-bottom:8px;
+}
+
+.achievement p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.journey{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.journey-card{
+    min-height:180px;
+    padding:25px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:var(--card);
+}
+
+.journey-card span{
+    font-size:12px;
+    color:var(--secondary);
+}
+
+.journey-card h3{
+    margin:15px 0 10px;
+}
+
+.journey-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-box{
+    margin-top:50px;
+    padding:60px;
+    border-radius:30px;
+    border:1px solid var(--line);
+    background:
+        linear-gradient(120deg,rgba(139,124,255,.12),rgba(53,214,200,.06)),
+        var(--card);
+    text-align:center;
+}
+
+.contact-box h3{
+    font-family:"Space Grotesk";
+    font-size:clamp(35px,5vw,65px);
+    margin-bottom:18px;
+}
+
+.contact-box p{
+    color:var(--muted);
+    max-width:600px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:35px 0;
+    border-top:1px solid var(--line);
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+footer p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.quote{
+    margin-top:35px;
+    text-align:center;
+    color:var(--muted);
+    font-style:italic;
+    font-size:13px;
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal{
+    opacity:1;
+    transform:none;
+}
+
+.js .reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.js .reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+@media(max-width:850px){
+
+    nav{
+        padding:12px 14px;
+        position:fixed;
+    }
+
+    .nav-links{
+        display:flex;
+        position:absolute;
+        top:calc(100% + 10px);
+        left:0;
+        right:0;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        padding:10px;
+        border:1px solid var(--line);
+        border-radius:16px;
+        background:rgba(10,12,18,.94);
+        backdrop-filter:blur(20px);
+        box-shadow:var(--shadow);
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-8px) scale(.98);
+        pointer-events:none;
+        transition:opacity .25s ease, transform .25s ease, visibility .25s ease;
+    }
+
+    .light .nav-links{
+        background:rgba(255,255,255,.96);
+    }
+
+    .nav-links.open{
+        opacity:1;
+        visibility:visible;
+        transform:translateY(0) scale(1);
+        pointer-events:auto;
+    }
+
+    .nav-links a{
+        display:block;
+        padding:13px 14px;
+        border-radius:10px;
+        font-size:14px;
+    }
+
+    .nav-links a:hover{
+        background:var(--card-hover);
+    }
+
+    .menu{
+        display:block;
+        width:38px;
+        height:38px;
+        border:1px solid var(--line);
+        background:var(--card);
+        color:var(--text);
+        padding:0;
+        border-radius:10px;
+        cursor:pointer;
+        font-size:19px;
+        line-height:1;
+    }
+
+    .hero-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:130px;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .profile-wrap{
+        order:-1;
+    }
+
+    .profile-card{
+        width:270px;
+        height:350px;
+    }
+
+    .cert-grid{
+        grid-template-columns:1fr;
+    }
+
+    .achievement-grid{
+        grid-template-columns:1fr;
+    }
+
+    .journey{
